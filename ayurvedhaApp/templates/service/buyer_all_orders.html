@@ -1,0 +1,193 @@
+
+<!DOCTYPE HTML>
+<html lang="zxx">
+
+<head>
+<title>AyurExpert</title>
+<!-- Meta tag Keywords -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="keywords" content="Validify Login Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements"
+/>
+<script>
+addEventListener("load", function () {
+setTimeout(hideURLbar, 0);
+}, false);
+
+function hideURLbar() {
+window.scrollTo(0, 1);
+}
+</script>
+<!-- Meta tag Keywords -->
+<!-- css files -->
+<link rel="stylesheet" href="/static/service/css/style.css" type="text/css" media="all" />
+<!-- Style-CSS -->
+<link rel="stylesheet" href="/static/service/css/fontawesome-all.css">
+<!-- Font-Awesome-Icons-CSS -->
+<!-- //css files -->
+<!-- web-fonts -->
+<link href="//fonts.googleapis.com/css?family=Nova+Round" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+<!-- //web-fonts -->
+</head>
+
+<body>
+<style type="text/css">
+#customers {
+
+width: 100%;
+   color: #fff;
+   outline: none;
+   font-size: 14px;
+   letter-spacing: 1px;
+   padding: 15px 15px;
+   box-sizing: border-box;
+   border: none;
+   background: rgba(4, 4, 4, 0.61);
+   /*border: 1px solid #FFC107;*/
+   border: 1px solid #b32400;
+   box-shadow: 1px 5px 12px 0px rgba(0, 0, 0, 0.46);
+}
+div.gallery {
+  margin: 15px;
+  border: 0px solid #ccc;
+  float: left;
+}
+
+</style>
+<!-- title -->
+<h1>
+Ayur<span>E</span>xpert
+</h1>
+<!-- //title -->
+<!-- content -->
+<div class="sub-main-w3">
+
+<div class="w3l-contact-10 py-5" id="contact">
+    <div class="form-41-mian pt-lg-4 pt-md-3 pb-4">
+       <div class="container">
+          <!-- <div class="row"> -->
+         <!-- <div class="col-lg-12 form-inner-cont">
+<center><h2>MY Orders</h2></center>
+          </div>  -->
+          <form action="//" method="POST">
+          {% csrf_token %}
+
+          <center><h1>Ordered Products</h1></center>
+
+          {% for x in var %}
+                <div class="gallery">
+                  <img src="{{x.art_id.Pro_Image.url}}" alt=" " width="200" height="200" style="border-radius: 50px;"> 
+                    <br>
+                    <center>
+                         Quantity:{{x.quantity}}<br>
+                         Price:{{x.art_id.Pro_Price}}/-<br>
+                         Total:{{x.total}}<br>
+                         Status:{{x.status}}<br>
+                         </center>
+                         
+                        <!-- <a href="/delete_cart/?id={{x.id}}"><i class="fa fa-trash"> </i></a> -->
+                          <br>
+                    </div>
+                    <br>
+                     {% endfor %}
+                     <div class="form-group"></div>
+
+
+                     <center><h1>Picked Products</h1></center>
+                     <div class="form-group"></div>
+
+          {% for x in var1 %}
+                <div class="gallery">
+                  <img src="{{x.art_id.Pro_Image.url}}" alt=" " width="200" height="200" style="border-radius: 50px;"> 
+                    <br>
+                    <center>
+                         Quantity:{{x.quantity}}<br>
+                         Price:{{x.art_id.Pro_Price}}/-<br>
+                         Total:{{x.total}}<br>
+                         Status:{{x.status}}<br>
+                         </center>
+                         
+                        <!-- <a href="/delete_cart/?id={{x.id}}"><i class="fa fa-trash"> </i></a> -->
+                          <br>
+                    </div>
+                    <br>
+                     {% endfor %}
+
+                     <center><h1>Delivered Products</h1></center>
+
+          {% for x in var2 %}
+                <div class="gallery">
+                  <img src="{{x.art_id.Pro_Image.url}}" alt=" " width="200" height="200" style="border-radius: 50px;"> 
+                    <br>
+                    <center>
+                         Quantity:{{x.quantity}}<br>
+                         Price:{{x.art_id.Pro_Price}}/-<br>
+                         Total:{{x.total}}<br>
+                         Status:{{x.status}}<br>
+                         </center>
+                         
+                        <!-- <a href="/delete_cart/?id={{x.id}}"><i class="fa fa-trash"> </i></a> -->
+                          <br>
+                    </div>
+                    <br>
+                     {% endfor %}
+
+                   </form>
+<!-- <div class="sub-main-w3"> -->
+  <center>
+<a href="/my_orderss/">
+  <button class="btn btn-default btn-osx btn-lg">𝘽𝙖𝙘𝙠
+  </button>
+</a>
+
+<!-- </div> -->
+<!-- <div class="sub-main-w3"> -->
+<a href="/s_logout/">
+  <button class="btn btn-default btn-osx btn-lg">𝙇𝙤𝙜𝙤𝙪𝙩
+  </button>
+</a>
+</center>
+</div></div>
+</div></div>
+<!-- </div> -->
+<div class="sub-main-w3">
+
+</div>
+<div class="footer">
+<!-- <p>&copy; 2018 Validify Login Form. All rights reserved | Design by
+<a href="http://w3layouts.com">W3layouts</a>
+</p> -->
+</div>
+<!-- //copyright -->
+
+<!-- Jquery -->
+<script src="/static/service/js/jquery-2.2.3.min.js"></script>
+<!-- //Jquery -->
+<!-- validify plugin -->
+<script src="/static/service/js/validify.js"></script>
+<script>
+$("#demo").validify({
+onSubmit: function (e, $this) {
+$this.find('.alert').removeClass('hidden')
+},
+onFormSuccess: function (form) {
+console.log("Form is valid now!")
+},
+onFormFail: function (form) {
+console.log("Form is not valid :(")
+}
+});
+$("#demo").validify({
+errorStyle: "validifyError",
+successStyle: "validifySuccess",
+emailFieldName: "email",
+emailCheck: true,
+requiredAttr: "required",
+});
+</script>
+<!-- //validify plugin -->
+
+</body>
+
+</html>

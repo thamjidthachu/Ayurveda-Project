@@ -1,0 +1,483 @@
+<!DOCTYPE HTML>
+<html lang="zxx">
+
+<head>
+<title>AyurExpert</title>
+<!-- Meta tag Keywords -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="keywords" content="Validify Login Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements"
+/>
+<script>
+addEventListener("load", function () {
+setTimeout(hideURLbar, 0);
+}, false);
+
+function hideURLbar() {
+window.scrollTo(0, 1);
+}
+</script>
+<!-- Meta tag Keywords -->
+<!-- css files -->
+<link rel="stylesheet" href="/static/service/css/style.css" type="text/css" media="all" />
+<!-- Style-CSS -->
+<link rel="stylesheet" href="/static/service/css/fontawesome-all.css">
+<!-- Font-Awesome-Icons-CSS -->
+<!-- //css files -->
+<!-- web-fonts -->
+<link href="//fonts.googleapis.com/css?family=Nova+Round" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+<!-- //web-fonts -->
+</head>
+
+<body>
+<style type="text/css">
+#customers {
+
+width: 100%;
+   color: #fff;
+   outline: none;
+   font-size: 14px;
+   letter-spacing: 1px;
+   padding: 15px 15px;
+   box-sizing: border-box;
+   border: none;
+   background: rgba(4, 4, 4, 0.61);
+   /*border: 1px solid #FFC107;*/
+   border: 1px solid #b32400;
+   box-shadow: 1px 5px 12px 0px rgba(0, 0, 0, 0.46);
+}
+div.gallery {
+  margin: 15px;
+  border: 0px solid #ccc;
+  float: left;
+}
+
+</style>
+<!-- title -->
+<h1>
+<!-- <span>V</span>alidify -->
+<!-- <span>L</span>ogin -->
+Ayur<span>E</span>xpert
+
+<!-- <span>F</span>orm -->
+</h1>
+<!-- //title -->
+<!-- content -->
+
+<div class="sub-main-w3">
+
+
+
+
+
+
+
+
+
+<div class="w3l-contact-10 py-5" id="contact">
+    <div class="form-41-mian pt-lg-4 pt-md-3 pb-4">
+       <div class="container">
+          <div class="row">
+         <div class="col-lg-12 form-inner-cont">
+  <!-- ********************************************** -->
+          <center><h2>MY Cart</h2></center>
+          </div> 
+          <form action="/cart_product_payment/" method="POST">
+          {% csrf_token %}
+
+          {% for x in tid %}
+                <div class="gallery">
+                  <img src="{{x.art_id.Pro_Image.url}}" alt=" " width="200" height="200" style="border-radius: 50px;"> 
+                    <!-- <img src="{{x.image.url}}" height="200px" width="200px" style="border-radius: 50px;"> -->
+                    <br>
+                    <center>
+                         Quantity:{{x.quantity}}<br>
+                         Price:{{x.art_id.Pro_Price}}/-<br>
+                         Amount:{{x.total}}<br>
+                         </center>
+                         <center>
+                          <!-- <a href="/product_detail_view/?id={{x.id}}">
+                        <input type="button" name="edt_btn" class="btn btn-default btn-osx btn-lg" value="𝙎𝙝𝙤𝙥 𝙣𝙤𝙬" ></a> -->
+                        <a href="/delete_cart/?id={{x.id}}"><i class="fa fa-trash"> </i></a>
+                         </center> <br>
+                    </div>
+                    <br>
+
+                     {% endfor %}
+                     <div class="form-group"></div>
+
+
+
+
+   <!--  <table class="table" border="0" width="600px">
+      <tr>
+        <th><b>Product<b></th>
+         <th>Quantity</th>
+          <th>Price</th>         
+            <th>Amount</th>
+            <th>Delete</th>
+        </tr>
+          <div class="form-group"></div>
+            {% for x in tid %}
+            <tr>
+            <td>
+                    <a href="/product_detail_view/?id={{x.art_id.id}}"><img src="{{x.art_id.image.url}}" alt=" " width="200" height="200" style="border-radius: 50px;"> </a>
+                   
+        <div class="form-group"></div>
+    </td>
+    <td>{{x.quantity}}</td>
+    <td>{{x.art_id.price}}</td>
+    <td>{{x.total}}</td>
+    <td>
+    <a href="/delete_cart/?id={{x.id}}"><i class="fa fa-trash">
+     </i></a>
+    </td>
+    </tr>
+{% endfor %}
+</table> -->
+<script type="text/javascript">
+  function shlocaltotal()
+  {
+    var d=parseInt(document.getElementById("ld").value);
+    var d1=parseInt(document.getElementById("subtot").value);
+
+    totalprize=d+d1;
+    
+    document.getElementById("total").innerHTML=totalprize;
+    document.getElementById("subtotal").value=totalprize;
+
+  }
+</script>
+<script type="text/javascript">
+  function shhometotal()
+  {
+    var d=parseInt(document.getElementById("hd").value);
+    var d1=parseInt(document.getElementById("subtot").value);
+
+    totalprize=d+d1;
+    
+    document.getElementById("total").innerHTML=totalprize;
+    document.getElementById("subtotal").value=totalprize;
+  }
+</script>
+<!-- <form action="/cart_product_payment/" method="POST">
+  {% csrf_token %} -->
+  <div class="row">
+<div class="col-md-6">
+                <h2 class="h3 mb-3 text-black font-heading-serif">Shipping</h2>
+                <div class="p-3 p-lg-5 border">
+                  <table class="table site-block-order-table mb-5">
+                    <thead>
+                      <th>Delivery</th>
+                      <th>Total</th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                  <td class="text-black font-weight-bold"><strong>Local Delivery:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp50 </strong></td>
+                        <td class="text-black"><input type="radio" value=50
+                    id="ld" name="shipping" onclick="shlocaltotal()" required=""></td>
+                      </tr>
+                      <tr>
+                    <td class="text-black font-weight-bold"><strong>Home Delivery:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp100 </strong></td>
+                        <td class="text-black"><input type="radio" value=100
+                    id="hd" name="shipping" onclick="shhometotal()" required=""></td>
+                      </tr>
+                    </tbody>
+                  </table>
+    </div>
+  </div>
+   <div class="form-group"></div>
+    <div class="col-md-6">
+                <h2 class="h3 mb-3 text-black font-heading-serif">Grand Total</h2>
+                <div class="p-3 p-lg-5 border">
+                  <table class="table site-block-order-table mb-5">
+                    <thead>
+                      <th></th>
+                      <th></th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="text-black font-weight-bold"><strong>Subtotal&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
+                        <td class="text-black"><strong class="text-black" id="subtotal" name="total" >{{sum}}</strong></td>
+                        <input type="text" id="subtot" value={{sum}} name="subtotal" hidden="" >
+                      </tr>
+                      <tr>
+                        <td class="text-black font-weight-bold"><strong>Total&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
+                        <td class="text-black"><strong class="text-black" id="total" name="total" ></strong></td>
+                        <input type="text" id="subtotal"  name="subtotal" hidden="">
+                      </tr>
+                    </tbody>
+                  </table>
+    </div>
+  </div>
+  <center>
+   <div class="p-3 p-lg-5 border">
+   <div class="col-md-12 form-group">
+          <button type="submit" class="btn btn-default btn-osx btn-lg">𝘽𝙪𝙮 𝘼𝙡𝙡</button>
+                      </div>
+</div></center>
+  </form>
+</div>
+    </section>
+           </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<center>
+<a href="/my_orderss/">
+  <button class="btn btn-default btn-osx btn-lg">𝘽𝙖𝙘𝙠
+  </button>
+</a>
+
+<!-- </div> -->
+<!-- <div class="sub-main-w3"> -->
+<a href="/s_logout/">
+  <button class="btn btn-default btn-osx btn-lg">𝙇𝙤𝙜𝙤𝙪𝙩
+  </button>
+</a>
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div class="sub-main-w3">
+
+<!-- //switch -->
+</div>
+<!-- //content -->
+
+<!-- copyright -->
+<div class="footer">
+<!-- <p>&copy; 2018 Validify Login Form. All rights reserved | Design by
+<a href="http://w3layouts.com">W3layouts</a>
+</p> -->
+</div>
+<!-- //copyright -->
+
+<!-- Jquery -->
+<script src="/static/service/js/jquery-2.2.3.min.js"></script>
+<!-- //Jquery -->
+<!-- validify plugin -->
+<script src="/static/service/js/validify.js"></script>
+<script>
+$("#demo").validify({
+onSubmit: function (e, $this) {
+$this.find('.alert').removeClass('hidden')
+},
+onFormSuccess: function (form) {
+console.log("Form is valid now!")
+},
+onFormFail: function (form) {
+console.log("Form is not valid :(")
+}
+});
+$("#demo").validify({
+errorStyle: "validifyError",
+successStyle: "validifySuccess",
+emailFieldName: "email",
+emailCheck: true,
+requiredAttr: "required",
+});
+</script>
+<!-- //validify plugin -->
+
+</body>
+
+</html>
+
+
+
+
+
+
+<!-- <div class="w3l-contact-10 py-5" id="contact">
+        <div class="form-41-mian pt-lg-4 pt-md-3 pb-4">
+
+            <div class="container">
+
+                <div class="row">
+<div class="col-lg-12 form-inner-cont"> -->
+<!-- ************************************************************* -->
+
+     <!-- <section >
+        <div class="container">
+                        <h1>MY <span>cart</span></h1>
+        </div>
+    </section>
+    
+   <section id="services-area" class="pt-150 pb-150">
+    <table class="table">
+
+    <thead class="thead-dark">
+      <tr>
+        <th>Product</th>
+         <th>Quantity</th>
+          <th>Price</th>         
+            <th>Amount</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for x in var %}
+        <tr>
+            <td>
+        <div class="service-content pt-50">
+            <div class="container-fluid">
+                
+                <div class="row ">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                        
+                                <a href="/product_detail_view/?id={{x.art_id.id}}"><img src="{{x.art_id.image.url}}" alt=" " width="250" height="250" style="border-radius: 50px;">
+                                </a>
+                            </div>
+                </div>
+            </div>
+        </div>
+    </td>
+    <td>
+        <div class="service-content pt-50">
+    <div class="container-fluid">
+               
+    <div class="row ">
+
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+    {{x.quantity}}</div></div></div></div>
+    </td>
+<td>
+        <div class="service-content pt-50">
+    <div class="container-fluid">
+               
+    <div class="row ">
+
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+    {{x.art_id.price}}</div></div></div></div>
+    </td>
+    <td>
+        <div class="service-content pt-50">
+    <div class="container-fluid">
+               
+    <div class="row ">
+
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+    {{x.total}}</div></div></div></div>
+    </td>
+
+    <td>
+        <div class="service-content pt-50">
+    <div class="container-fluid">
+               
+    <div class="row ">
+
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6" >
+        <a href="/delete_cart/?id={{x.id}}"><i class="fa fa-trash">
+     </i></a>
+ </div></div></div></div>
+    </td>
+    </tr>
+</tbody>
+{% endfor %}
+</table>
+<script type="text/javascript">
+  function shlocaltotal()
+  {
+    var d=parseInt(document.getElementById("ld").value);
+    var d1=parseInt(document.getElementById("subtot").value);
+
+    totalprize=d+d1;
+    
+    document.getElementById("total").innerHTML=totalprize;
+    document.getElementById("subtotal").value=totalprize;
+
+  }
+</script>
+<script type="text/javascript">
+  function shhometotal()
+  {
+    var d=parseInt(document.getElementById("hd").value);
+    var d1=parseInt(document.getElementById("subtot").value);
+
+    totalprize=d+d1;
+    
+    document.getElementById("total").innerHTML=totalprize;
+    document.getElementById("subtotal").value=totalprize;
+  }
+</script>
+<form action="/cart_product_payment/" method="POST">
+  {% csrf_token %}
+  <div class="row">
+<div class="col-md-6">
+                <h2 class="h3 mb-3 text-black font-heading-serif">Shipping</h2>
+                <div class="p-3 p-lg-5 border">
+                  <table class="table site-block-order-table mb-5">
+                    <thead>
+                      <th>Delivery</th>
+                      <th>Total</th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="text-black font-weight-bold"><strong>Local Delivery:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp50 </strong></td>
+                        <td class="text-black"><input type="radio" value=50
+                    id="ld" name="shipping" onclick="shlocaltotal()" required=""></td>
+                      </tr>
+                      <tr>
+                    <td class="text-black font-weight-bold"><strong>Home Delivery:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp100 </strong></td>
+                        <td class="text-black"><input type="radio" value=100
+                    id="hd" name="shipping" onclick="shhometotal()" required=""></td>
+                      </tr>
+                    </tbody>
+                  </table>
+    </div>
+  </div>
+<div class="col-md-6">
+                <h2 class="h3 mb-3 text-black font-heading-serif">Grand Total</h2>
+                <div class="p-3 p-lg-5 border">
+                  <table class="table site-block-order-table mb-5">
+                    <thead>
+                      <th></th>
+                      <th></th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="text-black font-weight-bold"><strong>Subtotal&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
+                        <td class="text-black"><strong class="text-black" id="subtotal" name="total" >{{sum}}</strong></td>
+                        <input type="text" id="subtot" value={{sum}} name="subtotal" hidden="" >
+                      </tr>
+                      <tr>
+                        <td class="text-black font-weight-bold"><strong>Total&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
+                        <td class="text-black"><strong class="text-black" id="total" name="total" ></strong></td>
+                        <input type="text" id="subtotal"  name="subtotal" hidden="">
+                      </tr>
+                    </tbody>
+                  </table>
+    </div>
+  </div>
+  <center>
+   <div class="p-3 p-lg-5 border">
+   <div class="col-md-12 form-group">
+                        <button type="submit" class="btn btn-style btn-primary">Buy All</button>
+                      </div>
+</div></center>
+  </form>
+</div>
+    </section>
+           </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ -->

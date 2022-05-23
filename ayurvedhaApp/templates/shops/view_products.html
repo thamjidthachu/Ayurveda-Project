@@ -1,0 +1,64 @@
+{% extends 'shops/head.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: 100%;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+{% for x in var2 %}
+<div class="gallery">
+    <img src="{{x.Pro_Image.url}}" alt="Cinque Terre" width="600" height="400">
+  <div class="desc">Name:{{x.Pro_Name}}</div>
+  <div class="desc" >Price:{{x.Pro_Price}} , Code:{{x.Pro_Code}}</div>
+  <div >Description:{{x.Pro_Description}}</div>
+  <div >Quantity:{{x.Pro_Qty}}</div>
+
+
+</div>
+
+{% endfor %}
+</body>
+</html>
+
+ {% if error %}
+<script type="text/javascript">
+  swal("Error!", "{{error}}", "error");
+</script>
+{% endif %}
+
+{% if success %}
+<script type="text/javascript">
+  swal("Congrats!", "{{success}}", "success");
+</script>
+{% endif %}
+
+{% if info %}
+<script type="text/javascript">
+  swal("Information!", "{{info}}", "info");
+</script>
+{% endif %}
+
+{% endblock %}

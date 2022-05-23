@@ -1,0 +1,297 @@
+{% extends 'shops/headerfooter.html' %}
+{% block content %}
+
+	
+
+	  <style type="text/css">
+		#customers {
+		  font-family: Arial, Helvetica, sans-serif;
+		  border-collapse: collapse;
+		  width: 80%;
+		  margin-left: auto;
+    	  margin-right: auto;
+    	  margin-bottom: 100px;
+    	  margin-top: 	auto;
+    	  border: 10px;
+		}
+
+		#customers td, #customers th {
+		  border: 1px solid #ddd;
+		  padding: 8px;
+		}
+
+		#customers tr:nth-child(even){background-color: #f2f2f2;color: black;}
+
+		#customers tr:nth-child(odd){background-color: #ddd;color: black;}
+
+		#customers th {
+		  padding-top: 12px;
+		  padding-bottom: 12px;
+		  text-align: left;
+		  background-color: #4CAF50;
+		  color: white;
+		}
+
+	</style>
+	<div class="candidate_cv">
+	<div class="services" id="services">
+		<div class="container">
+			<div class="tittle_head_w3ls">
+				<h3 class="tittle"><center>Order Pending List</center></h3><br><br>
+			</div>
+			<div class="inner_sec_grids_info_w3ls">
+					<table id="customers" cellpadding="0" cellspacing="0" border="10">
+		<thead>		
+		<tr>
+		<th>Sl no</th>
+		<th>Name</th>
+		<th>Qty</th>
+		<!-- <th>Price</th> -->
+		<th>Total</th>
+		<th>Status</th>
+		<th>Payment Status</th>
+
+		<th>Customer Details(Name,Address,Contact)</th>
+		<th>Image</th>
+		
+		<th> Action</th>
+
+	</tr>
+                </thead>
+                <tbody>
+{% for x in var %}
+
+	
+
+	<tr>
+		<td>{{forloop.counter}}</td>
+
+		<td>{{x.art_id.Pro_Name}}</td>
+		<td>{{x.quantity}}</td>
+		<!-- <td>{{x.Order_Price}}</td> -->
+		<td>{{x.total}}</td>
+		<td>{{x.Order_Status}}</td>
+		<td>{{x.status}}</td>
+		<td>{{x.buyer_id.User_Name}},
+	{{x.buyer_id.User_Phone}},
+{{x.buyer_id.User_Address}}</td>
+                  <td><img src="{{x.art_id.Pro_Image.url}}" height="50" width="50"></td>
+                   <td>
+                    <form action="/allocate_order_works/?id={{x.id}}" method="POST" >
+  					{% csrf_token %}
+                    <input type="hidden" name="wid" value="{{wid}}" >
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Allocate work to:</label>
+                    <select name="worker" class="form-control">
+                <option disabled selected>select </option>
+                {% for x in ob %}
+                <option value="{{x.Staff_Email}}">{{x.Staff_Name}}</option>
+                {% endfor %}
+              </select>
+                   <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Allote</button>
+                </div>
+                </form></td>
+
+
+
+	
+
+ 	</tr>
+
+		{% endfor %}
+         </tbody>
+	
+
+	</table>
+		
+				</div>
+		
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+<div class="candidate_cv">
+	<div class="services" id="services">
+		<div class="container">
+			<div class="tittle_head_w3ls">
+				<h3 class="tittle"><center>Order Processing List</center></h3><br><br>
+			</div>
+			<div class="inner_sec_grids_info_w3ls">
+					<table id="customers" cellpadding="0" cellspacing="0" border="10">
+		<thead>		
+		<tr>
+		<th>Sl no</th>
+		<th>Name</th>
+		<th>Qty</th>
+		<!-- <th>Price</th> -->
+		<th>Total</th>
+		<th>Status</th>
+		<th>Payment Status</th>
+
+		<th>Customer Details(Name,Address,Contact)</th>
+		<th>Image</th>
+		
+		<!-- <th> Action</th> -->
+
+	</tr>
+                </thead>
+                <tbody>
+{% for x in var1 %}
+
+	<tr>
+		<td>{{forloop.counter}}</td>
+
+		<td>{{x.art_id.Pro_Name}}</td>
+		<td>{{x.quantity}}</td>
+		<!-- <td>{{x.Order_Price}}</td> -->
+		<td>{{x.total}}</td>
+		<td>{{x.Order_Status}}</td>
+		<td>{{x.status}}</td>
+		<td>{{x.buyer_id.User_Name}},
+	{{x.buyer_id.User_Phone}},
+{{x.buyer_id.User_Address}}</td>
+                  <td><img src="{{x.art_id.Pro_Image.url}}" height="50" width="50"></td>
+                  <!--  <td>
+                    <form action="/allocate_order_works/?id={{x.id}}" method="POST" >
+  					{% csrf_token %}
+                    <input type="hidden" name="wid" value="{{wid}}" >
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Allocate work to:</label>
+                    <select name="worker" class="form-control">
+                <option disabled selected>select </option>
+                {% for x in ob %}
+                <option value="{{x.Staff_Email}}">{{x.Staff_Name}}</option>
+                {% endfor %}
+              </select>
+                   <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Allote</button>
+                </div>
+                </form></td> -->
+
+
+
+	
+
+ 	</tr>
+
+		{% endfor %}
+         </tbody>
+	
+
+	</table>
+		
+				</div>
+		
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+
+
+
+<div class="candidate_cv">
+	<div class="services" id="services">
+		<div class="container">
+			<div class="tittle_head_w3ls">
+				<h3 class="tittle"><center>Order completed List</center></h3><br><br>
+			</div>
+			<div class="inner_sec_grids_info_w3ls">
+					<table id="customers" cellpadding="0" cellspacing="0" border="10">
+		<thead>		
+		<tr>
+		<th>Sl no</th>
+		<th>Name</th>
+		<th>Qty</th>
+		<!-- <th>Price</th> -->
+		<th>Total</th>
+		<th>Status</th>
+		<th>Payment Status</th>
+
+		<th>Customer Details(Name,Address,Contact)</th>
+		<th>Image</th>
+		
+		<!-- <th> Action</th> -->
+
+	</tr>
+                </thead>
+                <tbody>
+{% for x in var3 %}
+
+	<tr>
+		<td>{{forloop.counter}}</td>
+
+		<td>{{x.art_id.Pro_Name}}</td>
+		<td>{{x.quantity}}</td>
+		<!-- <td>{{x.Order_Price}}</td> -->
+		<td>{{x.total}}</td>
+		<td>{{x.Order_Status}}</td>
+		<td>{{x.status}}</td>
+		<td>{{x.buyer_id.User_Name}},
+	{{x.buyer_id.User_Phone}},
+{{x.buyer_id.User_Address}}</td>
+                  <td><img src="{{x.art_id.Pro_Image.url}}" height="50" width="50"></td>
+                  <!--  <td>
+                    <form action="/allocate_order_works/?id={{x.id}}" method="POST" >
+  					{% csrf_token %}
+                    <input type="hidden" name="wid" value="{{wid}}" >
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Allocate work to:</label>
+                    <select name="worker" class="form-control">
+                <option disabled selected>select </option>
+                {% for x in ob %}
+                <option value="{{x.Staff_Email}}">{{x.Staff_Name}}</option>
+                {% endfor %}
+              </select>
+                   <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Allote</button>
+                </div>
+                </form></td> -->
+
+
+
+	
+
+ 	</tr>
+
+		{% endfor %}
+         </tbody>
+	
+
+	</table>
+		
+				</div>
+		
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+
+ {% if error %}
+<script type="text/javascript">
+  swal("Error!", "{{error}}", "error");
+</script>
+{% endif %}
+
+{% if success %}
+<script type="text/javascript">
+  swal("Congrats!", "{{success}}", "success");
+</script>
+{% endif %}
+
+{% if info %}
+<script type="text/javascript">
+  swal("Information!", "{{info}}", "info");
+</script>
+{% endif %}
+{% endblock %} 

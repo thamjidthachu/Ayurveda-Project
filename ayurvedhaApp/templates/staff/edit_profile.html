@@ -1,0 +1,47 @@
+  
+{% extends 'staff/headerfooter.html' %}
+    {% block title %} Edit Profile {% endblock %}
+{% block content %}
+<style type="text/css">
+    body{
+        background-image: url("static/images/2.jpg");
+    }
+</style>
+  <div class="col-md-6">
+    <h2>Edit Profile</h2>
+                        <form action="/staff_eprofile/" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+{% for x in db %}
+                            <label style="color:darkgreen;"> Name </label>
+                            <input type="text" name="S_Name" value="{{x.Staff_Name}}" class="form-control" placeholder=" Staff Name"  >
+                           
+                            <label style="color:darkgreen;">Email </label>
+                            <input type="text" name="S_Email" value="{{x.Staff_Email}}" class="form-control" placeholder=" Email" >
+                            <label style="color:darkgreen;"> Phone  </label>
+                            <input type="text" name="S_Phone" value="{{x.Staff_Phone}}" class="form-control" placeholder=" Contact" >
+                           
+                            <label style="color:darkgreen;">Password </label>
+                            <input type="text" name="S_Password" value="{{x.Staff_Password}}" class="form-control" placeholder=" Password"  >
+                            
+                            <input type="submit" style="background-color: lightgreen;" class="form-control" value="ADD">
+            {% endfor %}
+                        </form>
+                    </div>
+ {% if error %}
+<script type="text/javascript">
+  swal("Error!", "{{error}}", "error");
+</script>
+{% endif %}
+
+{% if success %}
+<script type="text/javascript">
+  swal("Congrats!", "{{success}}", "success");
+</script>
+{% endif %}
+
+{% if info %}
+<script type="text/javascript">
+  swal("Information!", "{{info}}", "info");
+</script>
+{% endif %}
+{% endblock %}

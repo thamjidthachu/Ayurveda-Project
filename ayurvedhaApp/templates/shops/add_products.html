@@ -1,0 +1,57 @@
+{% extends 'shops/headerfooter.html' %}
+
+{% block content %}
+
+	<div class="inner_content_info_agileits">
+		<div class="container">
+			<div class="tittle_head_w3ls">
+				<h3 style="color:green;"><center>ADD PRODUCTS</center> </h3><br><br>
+			</div>
+			<div class="inner_sec_grids_info_w3ls">
+				<div class="signin-form">
+					<div class="col-md-12">
+						<form action="/add_products/" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+
+							<label style="color:darkgreen;">Product Name </label>
+							<input type="text" name="name" class="form-control" placeholder=" Product Name"  required="">
+							<label style="color:darkgreen;">Product Code </label>
+							<input type="text" name="code" class="form-control" placeholder=" Product Code"  required=""><label style="color:darkgreen;">Product Description </label>
+							<input type="text" name="description" class="form-control" placeholder=" Product Description"  required=""><label style="color:darkgreen;">Product Price </label>
+							<input type="text" name="price" class="form-control" placeholder=" Product Price"  required=""><label style="color:darkgreen;">Product Quantity </label>
+							<input type="text" name="qty" class="form-control" placeholder=" Product Quantity"  required="">
+							<label style="color:darkgreen;">Image</label>
+							<input type="file" name="image" class="form-control"  size="50"  required="">
+							
+							<input type="submit" style="background-color: lightgreen;" class="form-control" value="ADD">
+						</form>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	 {% if error %}
+<script type="text/javascript">
+  swal("Error!", "{{error}}", "error");
+</script>
+{% endif %}
+
+{% if success %}
+<script type="text/javascript">
+  swal("Congrats!", "{{success}}", "success");
+</script>
+{% endif %}
+
+{% if info %}
+<script type="text/javascript">
+  swal("Information!", "{{info}}", "info");
+</script>
+{% endif %}
+
+{% endblock %}
+
+	
+

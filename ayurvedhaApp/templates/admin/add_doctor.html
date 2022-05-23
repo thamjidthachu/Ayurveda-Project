@@ -1,0 +1,85 @@
+{% extends 'admin/headerfooter.html' %}
+
+{% block content %}
+
+ 
+	
+
+	<div class="inner_content_info_agileits">
+		<div class="container">
+			<div class="tittle_head_w3ls">
+				<h3 style="color:green;"><center>ADD DOCTOR</center> </h3><br><br>
+			</div>
+			<div class="inner_sec_grids_info_w3ls">
+				<div class="signin-form">
+					<div class="col-md-12">
+						<form action="/add_doctor/" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+
+							<label style="color:darkgreen;">Doctor Name </label>
+							<input type="text" name="name" class="form-control" placeholder=" Name"  required="">
+<label style="color:darkgreen;">Mobile number </label>
+
+							<input type="text" name="phone" placeholder="Phone" class="form-control" size="50" maxlength="10" required="">
+<label style="color:darkgreen;">Email ID </label>
+
+							<input type="email" name="email" placeholder="Email"  class="form-control" size="50" required="" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z.-]+\.[a-zA-Z]{2,}">
+<label style="color:darkgreen;">Password  </label>
+
+							<input type="password" name="password" size="50" class="form-control" id="password1" placeholder="Password" required="">
+							<label style="color:darkgreen;">Department </label>
+							<input type="text" name="department" placeholder="Enter Department" class="form-control" size="50" required="">
+							<label>District</label>
+							<select name="district" required="" id="country13"class="form-control" onchange="change_country(this.value)" class="frm-field required">
+								<option disabled selected>select district</option>
+                
+               					<option value="alappuzha">Alappuzha</option>
+                            <option value="ernakulam">Ernakulam</option>
+
+                            <option value="idukki">Idukki</option>
+
+                            <option value="kannur">Kannur</option>
+
+                            <option value="kasaragod">Kasaragod</option>
+                            <option value="kollam">Kollam</option>
+                            <option value="kottayam">Kottayam</option>
+                            <option value="kozhikode">Kozhikode</option>
+                            <option value="malappuram">Malappuram</option>
+                            <option value="palakkad">Palakkad</option>
+                            <option value="pathanamthitta">Pathanamthitta</option>
+                            <option value="Tvm">Thiruvananthapuram</option>
+                            <option value="thrissur">Thrissur</option>
+                             <option value="wayanad"> Wayanad</option>     
+										</select><br>
+							
+							<label style="color:darkgreen;">Image</label>
+							<input type="file" name="image" class="form-control"  size="50"  required="">
+							<input type="submit" style="background-color: gray;" class="form-control" value="ADD">
+						</form>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+ {% if error %}
+<script type="text/javascript">
+  swal("Error!", "{{error}}", "error");
+</script>
+{% endif %}
+
+{% if success %}
+<script type="text/javascript">
+  swal("Congrats!", "{{success}}", "success");
+</script>
+{% endif %}
+
+{% if info %}
+<script type="text/javascript">
+  swal("Information!", "{{info}}", "info");
+</script>
+{% endif %}
+	
+
+{% endblock %}

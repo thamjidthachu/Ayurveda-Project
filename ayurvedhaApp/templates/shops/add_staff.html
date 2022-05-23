@@ -1,0 +1,55 @@
+{% extends 'shops/headerfooter.html' %}
+
+{% block content %}
+
+	<div class="inner_content_info_agileits">
+		<div class="container">
+			<div class="tittle_head_w3ls">
+				<h3 style="color:green;"><center>ADD STAFF</center> </h3><br><br>
+			</div>
+			<div class="inner_sec_grids_info_w3ls">
+				<div class="signin-form">
+					<div class="col-md-9">
+						<form action="/add_staffs/" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+
+							<label style="color:darkgreen;">Staff Name </label>
+							<input type="text" name="sname" class="form-control" placeholder=" Staff Name"  required="">
+							<label style="color:darkgreen;">Password </label>
+							<input type="text" name="password" class="form-control" placeholder=" Password"  required="">
+							<label style="color:darkgreen;">Email </label>
+							<input type="text" name="email" class="form-control" placeholder=" Staff Email"  required="">
+							<label style="color:darkgreen;">Contact </label>
+							<input type="number" name="contact" class="form-control" placeholder=" Staff Contact"  required=""><br>
+							<input type="submit" style="background-color: lightgreen;" class="form-control" value="ADD">
+						</form>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	 {% if error %}
+<script type="text/javascript">
+  swal("Error!", "{{error}}", "error");
+</script>
+{% endif %}
+
+{% if success %}
+<script type="text/javascript">
+  swal("Congrats!", "{{success}}", "success");
+</script>
+{% endif %}
+
+{% if info %}
+<script type="text/javascript">
+  swal("Information!", "{{info}}", "info");
+</script>
+{% endif %}
+
+{% endblock %}
+
+	
+

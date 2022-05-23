@@ -1,0 +1,66 @@
+  
+{% extends 'doctor/headerfooter.html' %}
+    
+{% block content %}
+<style type="text/css">
+    body{
+        background-image: url("static/images/2.jpg");
+    }
+</style>
+  <div class="col-md-6">
+    <h2>Edit Profile</h2>
+                        <form action="/edit_doctor_profile/" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+{% for x in db %}
+                            <label style="color:darkgreen;"> Name </label>
+                            <input type="text" name="Dctr_Name" value="{{x.Dctr_Name}}" class="form-control" placeholder=" Doctor Name"  required="">
+                            <label style="color:darkgreen;">Place  </label>
+                            <input type="text" name="Dctr_Place" value="{{x.Dctr_Place}}" class="form-control" placeholder="  Place"  required="">
+                            <label style="color:darkgreen;">Email </label>
+                            <input type="text" name="Dctr_Email" value="{{x.Dctr_Email}}" class="form-control" placeholder=" Email"  required="">
+                            <label style="color:darkgreen;"> Phone  </label>
+                            <input type="text" name="Dctr_Phone" value="{{x.Dctr_Phone}}" class="form-control" placeholder=" Contact"  required="">
+                            <label style="color:darkgreen;">Department </label>
+                            <input type="text" name="Dctr_Department" value="{{x.Dctr_Department}}" class="form-control" placeholder=" Department"  required="">
+                            <label style="color:darkgreen;">Password </label>
+                            <input type="text" name="Dctr_Password" value="{{x.Dctr_Password}}" class="form-control" placeholder=" Password"  required="">
+                            <label style="color:darkgreen;">Consulting Time </label>
+                            <select name="Dctr_Time" class="form-control" value={{x.Dctr_Time}}>
+                            <option disabled selected>Select Consulting Time </option>
+
+                            <option value="9.00AM-10.00AM">9.00AM-10.00AM</option>
+                            <option value="10.00AM-11.00AM">10.00AM-11.00AM</option>
+                            <option value="11.00AM-12.00PM">11.00AM-12.00PM</option>
+                            <option value="1.00PM-2.00PM">1.00PM-2.00PM</option>
+                            <option value="2.00PM-3.00PM">2.00PM-3.00PM</option>
+                            <option value="3.00PM-4.00PM" >3.00PM-4.00PM</option>
+                            <option value="4.00PM-5.00PM" >4.00PM-5.00PM</option>
+                            <option value="6.00PM-7.00PM" >6.00PM-7.00PM</option>
+                            <option value="7.00PM-8.00PM" >7.00PM-8.00PM</option>
+</select>
+                              <label style="color:darkgreen;">Consulting Fees  </label>
+                            <input type="text" name="Dctr_Fee" value="{{x.Dctr_Fee}}" class="form-control" placeholder=" Password"  required="">
+                           
+                            
+                            <input type="submit" style="background-color: lightgreen;" class="form-control" value="ADD">
+            {% endfor %}
+                        </form>
+                    </div>
+ {% if error %}
+<script type="text/javascript">
+  swal("Error!", "{{error}}", "error");
+</script>
+{% endif %}
+
+{% if success %}
+<script type="text/javascript">
+  swal("Congrats!", "{{success}}", "success");
+</script>
+{% endif %}
+
+{% if info %}
+<script type="text/javascript">
+  swal("Information!", "{{info}}", "info");
+</script>
+{% endif %}
+{% endblock %}

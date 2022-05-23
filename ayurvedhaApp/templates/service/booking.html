@@ -1,0 +1,179 @@
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html lang="zxx">
+
+<head>
+    <title>AyurExpert</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="Validify Login Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements"
+    />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- Meta tag Keywords -->
+    <!-- css files -->
+    <link rel="stylesheet" href="/static/service/css/style.css" type="text/css" media="all" />
+    <!-- Style-CSS -->
+    <link rel="stylesheet" href="/static/service/css/fontawesome-all.css">
+    <!-- Font-Awesome-Icons-CSS -->
+    <!-- //css files -->
+    <!-- web-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Nova+Round" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <!-- //web-fonts -->
+</head>
+
+<body>
+<style type="text/css">
+    #customers {
+
+        width: 100%;
+        color: #fff;
+        outline: none;
+        font-size: 14px;
+        letter-spacing: 1px;
+        padding: 15px 15px;
+        box-sizing: border-box;
+        border: none;
+        background: rgba(4, 4, 4, 0.61);
+        border: 1px solid #FFC107;
+        box-shadow: 1px 5px 12px 0px rgba(0, 0, 0, 0.46);
+    }
+    </style>
+    <h1>
+        <!-- <span>V</span>alidify -->
+        <div class="form-group" style="overflow-x:auto;">
+                <a href="/s_logout/"><button class="btn btn-default btn-osx btn-lg" >
+                    <i >Logout</i>
+                </button></a>
+                <a href="/index_pass/"><button class="btn btn-default btn-osx btn-lg" >
+                    <i >Back</i>
+                </button></a>
+            </div>
+            <!-- <span>View Ride </span>Details  -->
+        <!-- <span>F</span>orm -->
+    </h1>
+    <!-- title -->
+    <h1>
+        <!-- <span>V</span>alidify -->
+        <span>Book Here...</span>
+        <!-- <span>F</span>orm -->
+    </h1>
+    <!-- //title -->
+    <!-- content -->
+
+    <div class="sub-main-w3">
+        <form action="/book_doctor/" method="POST">
+            {% csrf_token %}
+       
+        <center>
+           
+           
+
+
+
+                            <div class="form-group">
+
+                           <input type="date" id="customers" class="form-control textbox"  name="date" data-date-start-date="0d" required="" />
+
+                        </div>
+
+
+
+<input name="doctor_idd" value="{{doctor_idd}}" type="hidden">
+
+
+           
+            <div class="form-group">
+                <select id="customers" name="time" class="form-control" required="">
+                 <option disabled selected>Select Consulting Time </option>
+
+                            <option value="9.00AM-10.00AM">9.00AM-10.00AM</option>
+                            <option value="10.00AM-11.00AM">10.00AM-11.00AM</option>
+                            <option value="11.00AM-12.00PM">11.00AM-12.00PM</option>
+                            <option value="1.00PM-2.00PM">1.00PM-2.00PM</option>
+                            <option value="2.00PM-3.00PM">2.00PM-3.00PM</option>
+                            <option value="3.00PM-4.00PM" >3.00PM-4.00PM</option>
+                            <option value="4.00PM-5.00PM" >4.00PM-5.00PM</option>
+                            <option value="6.00PM-7.00PM" >6.00PM-7.00PM</option>
+                            <option value="7.00PM-8.00PM" >7.00PM-8.00PM</option>
+</select>
+                
+                
+            </div>
+            
+            
+<div class="form-group">
+                <button class="btn btn-default btn-osx btn-lg"  type="submit">
+                    <i class="fas fa-long-arrow-alt-right"></i>
+                </button>
+            </div>
+
+
+
+
+
+
+        </center>
+         </form>
+         <h1>
+        <!-- <span>V</span>alidify -->
+       
+           
+    </h1>
+        <!-- //switch -->
+    </div>
+
+
+    <!-- //content -->
+
+    <!-- copyright -->
+    <div class="footer">
+        <!-- <p>&copy; 2018 Validify Login Form. All rights reserved | Design by
+            <a href="http://w3layouts.com">W3layouts</a>
+        </p> -->
+    </div>
+    <!-- //copyright -->
+
+    <!-- Jquery -->
+    <script src="/static/service/js/jquery-2.2.3.min.js"></script>
+    <!-- //Jquery -->
+    <!-- validify plugin -->
+    <script src="/static/service/js/validify.js"></script>
+    <script>
+        $("#demo").validify({
+            onSubmit: function (e, $this) {
+                $this.find('.alert').removeClass('hidden')
+            },
+            onFormSuccess: function (form) {
+                console.log("Form is valid now!")
+            },
+            onFormFail: function (form) {
+                console.log("Form is not valid :(")
+            }
+        });
+        $("#demo").validify({
+            errorStyle: "validifyError",
+            successStyle: "validifySuccess",
+            emailFieldName: "email",
+            emailCheck: true,
+            requiredAttr: "required",
+        });
+    </script>
+    <!-- //validify plugin -->
+
+</body>
+
+</html>

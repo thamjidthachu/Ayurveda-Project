@@ -1,0 +1,44 @@
+  
+{% extends 'shops/head.html' %}
+    
+{% block content %}
+  <div class="col-md-6">
+                        <form action="/edit_profile/" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+{% for x in db %}
+                            <label style="color:darkgreen;">Shop Name </label>
+                            <input type="text" name="Shop_Name" value="{{x.Shop_Name}}" class="form-control" placeholder=" Product Name"  required="">
+                            <label style="color:darkgreen;">Shop Place  </label>
+                            <input type="text" name="Shop_Place" value="{{x.Shop_Place}}" class="form-control" placeholder=" Product Code"  required="">
+                            <label style="color:darkgreen;">Email </label>
+                            <input type="text" name="Shop_Email" value="{{x.Shop_Email}}" class="form-control" placeholder=" Product Description"  required="">
+                            <label style="color:darkgreen;"> Phone  </label>
+                            <input type="text" name="Shop_Phone" value="{{x.Shop_Phone}}" class="form-control" placeholder=" Product Price"  required="">
+                            <label style="color:darkgreen;">Lisence </label>
+                            <input type="text" name="Shop_License" value="{{x.Shop_License}}" class="form-control" placeholder=" Product Quantity"  required="">
+                            <label style="color:darkgreen;">Password </label>
+                            <input type="text" name="Shop_Password" value="{{x.Shop_Password}}" class="form-control" placeholder=" Product Quantity"  required="">
+                           
+                            
+                            <input type="submit" style="background-color: lightgreen;" class="form-control" value="ADD">
+            {% endfor %}
+                        </form>
+                    </div>
+ {% if error %}
+<script type="text/javascript">
+  swal("Error!", "{{error}}", "error");
+</script>
+{% endif %}
+
+{% if success %}
+<script type="text/javascript">
+  swal("Congrats!", "{{success}}", "success");
+</script>
+{% endif %}
+
+{% if info %}
+<script type="text/javascript">
+  swal("Information!", "{{info}}", "info");
+</script>
+{% endif %}
+{% endblock %}

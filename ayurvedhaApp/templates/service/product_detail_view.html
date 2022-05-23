@@ -1,0 +1,167 @@
+
+<style>
+.cart-add input {
+    width: 90px;
+    height: 55px;
+    font-size: 18px;
+    text-align: center;
+    border: 2px solid #212529;
+}
+</style>
+
+<!DOCTYPE HTML>
+<html lang="zxx">
+
+<head>
+<title>AyurExpert</title>
+<!-- Meta tag Keywords -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="keywords" content="Validify Login Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements"
+/>
+<script>
+addEventListener("load", function () {
+setTimeout(hideURLbar, 0);
+}, false);
+
+function hideURLbar() {
+window.scrollTo(0, 1);
+}
+</script>
+<!-- Meta tag Keywords -->
+<!-- css files -->
+<link rel="stylesheet" href="/static/service/css/style.css" type="text/css" media="all" />
+<!-- Style-CSS -->
+<link rel="stylesheet" href="/static/service/css/fontawesome-all.css">
+<!-- Font-Awesome-Icons-CSS -->
+<!-- //css files -->
+<!-- web-fonts -->
+<link href="//fonts.googleapis.com/css?family=Nova+Round" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+<!-- //web-fonts -->
+</head>
+
+<body>
+<style type="text/css">
+#customers {
+
+width: 100%;
+   color: #fff;
+   outline: none;
+   font-size: 14px;
+   letter-spacing: 1px;
+   padding: 15px 15px;
+   box-sizing: border-box;
+   border: none;
+   background: rgba(4, 4, 4, 0.61);
+   /*border: 1px solid #FFC107;*/
+   border: 1px solid #b32400;
+   box-shadow: 1px 5px 12px 0px rgba(0, 0, 0, 0.46);
+}
+</style>
+<!-- title -->
+<h1>
+<!-- <span>V</span>alidify -->
+<!-- <span>L</span>ogin -->
+Ayur<span>E</span>xpert
+
+<!-- <span>F</span>orm -->
+</h1>
+<!-- //title -->
+<!-- content -->
+
+<div class="sub-main-w3">
+
+  <form action="/product_booking/?id={{x.id}}" method="POST">
+                            {% csrf_token %}
+
+             
+<div class="container">          
+    <center><h2>Product Details</h2></center> <br> 
+    {% for x in var %}
+                <div class="gallery" align="center">
+                 <div class="col-lg-12 form-inner-cont">
+                     <center>
+                    <img src="{{x.Pro_Image.url}}" height="250px" width="300px" style="border-radius: 50px;"><br>
+                         <h2>{{x.Pro_Name}}<br>
+                         Rs.{{x.Pro_Price}}/-</h2>
+                         <b>Decription:</b>{{x.Pro_Description}}<br>
+                         <b>Seller:</b>{{x.Pro_Shop_ID.Shop_Name}}<br><br>
+                         </center> </div>
+                  <!-- <form action="/product_booking/?id={{x.id}}" method="POST">
+                            {% csrf_token %} -->
+                            <div class="cart-add input">
+                            <input type="number" name="number" value="1" id="number"></div>
+                             <div class="form-group"></div>
+                           <a onclick = "this.href='/add_to_cart/?id={{x.id}}&number=' + document.getElementById('number').value"><button type="button" class="btn btn-default btn-osx btn-lg">
+                             𝘼𝙙𝙙 𝙏𝙤 𝘾𝙖𝙧𝙩</button></a>
+                            </form>
+                            </div>
+                    </center> <br>
+                    {% endfor %}          
+</div></div>
+
+<center>
+<h1>
+    <!-- <span>V</span>alidify -->
+    <div class="form-group">
+        <a href="/s_logout/"><button class="btn btn-default btn-osx btn-lg" >
+          <i >Logout</i>
+        </button></a>
+        <a href="/index_pass/"><button class="btn btn-default btn-osx btn-lg" >
+          <i >Back</i>
+        </button></a>
+      </div>
+     
+  </h1>
+</center>
+
+
+<!-- //content -->
+
+<!-- copyright -->
+<div class="footer">
+<!-- <p>&copy; 2018 Validify Login Form. All rights reserved | Design by
+<a href="http://w3layouts.com">W3layouts</a>
+</p> -->
+</div>
+<!-- //copyright -->
+
+<!-- Jquery -->
+<script src="/static/service/js/jquery-2.2.3.min.js"></script>
+<!-- //Jquery -->
+<!-- validify plugin -->
+<script src="/static/service/js/validify.js"></script>
+<script>
+$("#demo").validify({
+onSubmit: function (e, $this) {
+$this.find('.alert').removeClass('hidden')
+},
+onFormSuccess: function (form) {
+console.log("Form is valid now!")
+},
+onFormFail: function (form) {
+console.log("Form is not valid :(")
+}
+});
+$("#demo").validify({
+errorStyle: "validifyError",
+successStyle: "validifySuccess",
+emailFieldName: "email",
+emailCheck: true,
+requiredAttr: "required",
+});
+</script>
+<!-- //validify plugin -->
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+

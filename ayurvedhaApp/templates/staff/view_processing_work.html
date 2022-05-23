@@ -1,0 +1,96 @@
+{% extends 'staff/headerfooter.html' %}
+    
+{% block content %}
+    <!-- ===========================
+    =====>> Hero <<===== -->
+     <section id="cta-area" class="cta-bg1 pt-80 pb-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="cta-left">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+  
+     <section id="services-area" class="pt-150">
+        <div class="container">
+
+<u><h2>Processing works:</h2></u><br>
+
+       <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>name</th>
+                  <th>email</th>
+                  <th>mobile</th>
+                  <th>product</th>
+
+
+                  <!-- <th>price</th> -->
+                  <th>total</th>
+                  <th>image</th>
+                  <th >Status</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for x in db  %}
+
+                <tr>
+                  <td>{{x.buyer_id.User_Name}}</td>
+                  <td>{{x.buyer_id.User_Email}}</td>
+
+                  <td>{{x.buyer_id.User_Phone}}</td>
+                  <td>{{x.art_id.Pro_Name}}</td>
+                  <!-- <td>{{x.product_id.price}}</td> -->
+                  <td>{{x.total}}</td>
+                  <!-- <td>{{x.experience}}</td> -->
+                  <td><img src="{{x.art_id.Pro_Image.url}}" height="50" width="50"></td>
+                  <td><a href="/finish_work/?id={{x.id}}">finished</a></td>
+
+                 
+                  
+                {% endfor %}
+               
+               
+                </tbody>
+                
+              </table>
+        
+
+
+</div>
+
+
+
+    </section>
+   
+    <section id="feature-area" class="pt-100 pb-150">
+       
+    </section>
+    <!-- =====>> End Feature <<===== 
+    =========================== -->
+ {% if error %}
+<script type="text/javascript">
+  swal("Error!", "{{error}}", "error");
+</script>
+{% endif %}
+
+{% if success %}
+<script type="text/javascript">
+  swal("Congrats!", "{{success}}", "success");
+</script>
+{% endif %}
+
+{% if info %}
+<script type="text/javascript">
+  swal("Information!", "{{info}}", "info");
+</script>
+{% endif %}
+
+{% endblock %}

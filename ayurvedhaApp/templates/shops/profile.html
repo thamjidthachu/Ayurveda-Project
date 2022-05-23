@@ -1,0 +1,85 @@
+{% extends 'shops/head.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  /*font-family: arial;*/
+}
+
+/*.title {
+  color: grey;
+  font-size: 18px;
+}*/
+
+/*button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+*/
+/*a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}*/
+
+/*button:hover, a:hover {
+  opacity: 0.7;
+}*/
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center"> Profile </h2><br>
+{% for x in var %}
+<div class="card">
+  <img src="/media/dummy.png" alt="John" style="width:100%">
+  <h1>{{x.Shop_Name}}</h1>
+  <p class="title">{{x.Shop_Email}}</p>
+  <p>{{x.Shop_Phone}}</p>
+  <p>{{x.Shop_License}}</p>
+  <p>{{x.Shop_Place}}</p>
+
+  <!-- <div style="margin: 24px 0;">
+    <a href="#"><i class="fa fa-dribbble"></i></a> 
+    <a href="#"><i class="fa fa-twitter"></i></a>  
+    <a href="#"><i class="fa fa-linkedin"></i></a>  
+    <a href="#"><i class="fa fa-facebook"></i></a> 
+  </div> -->
+  <p><button><a href="/edit_profile/">Edit Profile</a></button></p>
+</div>
+{% endfor %}
+
+</body>
+</html>
+ {% if error %}
+<script type="text/javascript">
+  swal("Error!", "{{error}}", "error");
+</script>
+{% endif %}
+
+{% if success %}
+<script type="text/javascript">
+  swal("Congrats!", "{{success}}", "success");
+</script>
+{% endif %}
+
+{% if info %}
+<script type="text/javascript">
+  swal("Information!", "{{info}}", "info");
+</script>
+{% endif %}
+{% endblock %}

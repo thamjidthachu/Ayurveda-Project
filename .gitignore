@@ -1,0 +1,5 @@
+ .idea/
+ db.sqlite3
+ ayurvedha/__pycache__/
+ ayurvedhaApp/__pycache__/
+ ayurvedhaApp/migrations/
